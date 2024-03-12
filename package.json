@@ -1,5 +1,5 @@
 {
-  "name": "feed-the-world,
+  "name": "feed-the-world",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
