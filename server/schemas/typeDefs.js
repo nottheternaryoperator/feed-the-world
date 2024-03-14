@@ -35,7 +35,7 @@ const typeDefs = gql`
     needs: [String]
     phone: String
     email: String
-    link: String
+    homepageLink: String
   }
 
   type Mutation {
