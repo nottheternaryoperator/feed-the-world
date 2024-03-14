@@ -15,6 +15,7 @@ const typeDefs = gql`
 
   type Bank {
     bankId: ID!
+    name: String!
     address: [String]
     needs: [String]
     phone: String
@@ -29,6 +30,7 @@ const typeDefs = gql`
 
   input bankData {
     bankId: ID!
+    name: String!
     address: [String]
     needs: [String]
     phone: String
