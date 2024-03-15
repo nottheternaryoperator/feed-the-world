@@ -1,5 +1,5 @@
-const { Bank, User } = require('./models');
-const { AuthenticationError, signToken } = require('./utils/auth');
+const { Bank, User } = require('../models');
+const { AuthenticationError, signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -16,12 +16,16 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials - no user found with this email address');
+        throw new AuthenticationError(
+          'Incorrect credentials - no user found with this email address'
+        );
       }
 
       const correctPw = await user.isCorrectPassword(password);
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials - no user found with this email address');
+        throw new AuthenticationError(
+          'Incorrect credentials - no user found with this email address'
+        );
       }
 
       const token = signToken(user);

@@ -1,17 +1,17 @@
-import Navbar from "./components/Navbar/navbar.jsx";
-import Login from "./components/login/Login.jsx";
-import Signup from "./components/login/SignUp.jsx";
-import Footer from "./components/Footer/footer.jsx";
+// import Navbar from "./components/Navbar/navbar.jsx";
+// import Login from './components/login/Login.jsx';
+// import Signup from './components/login/SignUp.jsx';
+// import Footer from './components/footer/footer.jsx';
 
 function App() {
-    return (
-      <div className="card">
-          <Navbar />
-          <Login />
-          <Signup />
-          <Footer />
-      </div>
+  return (
+    <div className="card">
+      {/* <Navbar /> */}
+      {/* <Login /> */}
+      {/* <Signup /> */}
+      {/* <Footer /> */}
+    </div>
   );
 }
 
-export default App
+export default App;
