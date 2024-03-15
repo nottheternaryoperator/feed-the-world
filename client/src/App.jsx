@@ -1,8 +1,8 @@
 
 import './App.css';
-import { Outlet } from 'react-router-dom';
+import { useState } from 'react';
 import Navbar from "./components/Navbar/navbar.jsx";
-
+import LoginForm from "./components/login/Login.jsx";
 import {
   ApolloClient,
   InMemoryCache,
@@ -31,14 +31,21 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to manage login status
+
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true); // Set login status to true upon successful login
+  };
+
   return (
     <ApolloProvider client={client}>
       <>
         <Navbar />
-        <Outlet />
+        {/* Conditionally render the LoginForm modal */}
+        {!isLoggedIn && <LoginForm onLoginSuccess={handleLoginSuccess} />}
+        {/* Render other components */}
       </>
     </ApolloProvider>
-
   );
-
+}
 export default App;
