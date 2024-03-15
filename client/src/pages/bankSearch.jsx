@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
-import { SAVE_BANK } from '../utils/mutations';
+// import { SAVE_BANK } from '../utils/mutations';
 import Auth from '../utils/auth';
+// import {} from '@mui/material';
 
 const BankSearch = () => {
   const [searchedBanks, setSearchedBanks] = useState([]);
   const [searchInput, setSearchInput] = useState('');
-  const [savedBankIds, setSavedBankIds] = useState(getSavedBankIds());
-  const [saveBank, { error }] = useMutation(SAVE_BANK);
+  //   const [savedBankIds, setSavedBankIds] = useState(getSavedBankIds());
+  //   const [saveBank, { error }] = useMutation(SAVE_BANK);
 
   useEffect(() => {
     return () => savedBankIds(savedBankIds);
@@ -46,4 +47,16 @@ const BankSearch = () => {
       console.error(err);
     }
   };
+
+  return (
+    <>
+      test
+      <form action={searchInput}>
+        <input name="query" />
+        <button type="submit">Search</button>
+      </form>
+    </>
+  );
 };
+
+export default BankSearch;

@@ -1,8 +1,7 @@
-
 import './App.css';
 import { useState } from 'react';
-import Navbar from "./components/Navbar/navbar.jsx";
-import LoginForm from "./components/login/Login.jsx";
+// import Navbar from './components/Navbar/navbar.jsx';
+import LoginForm from './components/login/Login.jsx';
 import {
   ApolloClient,
   InMemoryCache,
@@ -10,6 +9,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import BankSearch from './pages/bankSearch.jsx';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -40,7 +40,8 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <>
-        <Navbar />
+        <BankSearch />
+        {/* <Navbar /> */}
         {/* Conditionally render the LoginForm modal */}
         {!isLoggedIn && <LoginForm onLoginSuccess={handleLoginSuccess} />}
         {/* Render other components */}
