@@ -1,9 +1,8 @@
+
 import './App.css';
 import { Outlet } from 'react-router-dom';
 import Navbar from "./components/Navbar/navbar.jsx";
-// import Login from "./components/login/Login.jsx";
-// import Signup from "./components/login/SignUp.jsx";
-// import Footer from "./components/Footer/footer.jsx";
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -39,17 +38,7 @@ function App() {
         <Outlet />
       </>
     </ApolloProvider>
+
   );
 
-// function App() {
-//     return (
-//       <div className="card">
-//           <Navbar />
-//           <Login />
-//           <Signup />
-//           <Footer />
-//       </div>
-//   );
-}
-
-export default App
+export default App;
