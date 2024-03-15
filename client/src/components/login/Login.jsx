@@ -3,7 +3,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import Modal from 'react-modal';
 
 
-const LoginForm = () => {
+const LoginForm = ({ onLoginSuccess }) => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated, setValidated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
