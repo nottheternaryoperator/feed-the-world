@@ -8,7 +8,7 @@ import { FormControl, FormLabel } from '@mui/material';
 import Button from '@mui/material/Button';
 
 const BankSearch = () => {
-  // const [searchedBanks, setSearchedBanks] = useState([]);
+  const [searchedBanks, setSearchedBanks] = useState([]);
   const [searchInput, setSearchInput] = useState('');
   //   const [savedBankIds, setSavedBankIds] = useState(getSavedBankIds());
   //   const [saveBank, { error }] = useMutation(SAVE_BANK);
@@ -37,17 +37,19 @@ const BankSearch = () => {
 
       console.log(results);
 
-      // const bankData = results.map((bank) => ({
-      //   // bankId: bank.id,
-      //   name: bank.name,
-      //   address: bank.address,
-      //   needs: bank.needs || ["This foodbank hasn't posted any needed items."],
-      //   phone: bank.phone || ['no phone number available.'],
-      //   email: bank.email || ['no email address available.'],
-      //   link: bank.urls.homepage || ['no website address available'],
-      // }));
-      // console.log(bankData);
-      // setSearchedBanks(bankData);
+      const bankData = results.map((bank) => ({
+        // bankId: bank.id,
+        name: bank.name,
+        address: bank.address,
+        needs: bank.needs.needs || [
+          "This foodbank hasn't posted any needed items.",
+        ],
+        phone: bank.phone || ['no phone number available.'],
+        email: bank.email || ['no email address available.'],
+        link: bank.urls.homepage || ['no website address available'],
+      }));
+      console.log(bankData);
+      setSearchedBanks(bankData);
       setSearchInput('');
     } catch (err) {
       console.error(err);
