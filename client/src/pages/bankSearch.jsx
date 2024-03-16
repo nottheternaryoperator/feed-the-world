@@ -19,7 +19,7 @@ const BankSearch = () => {
 
   const formSubmitHandler = async (event) => {
     event.preventDefault();
-    console.log('it works');
+    console.log(searchInput);
     if (!searchInput) {
       return false;
     }
@@ -31,19 +31,22 @@ const BankSearch = () => {
       if (!response.ok) {
         throw new Error('API response error');
       }
+      console.log(response);
 
-      const { results } = await response.json();
+      const results = await response.json();
 
-      const bankData = results.map((bank) => ({
-        // bankId: bank.id,
-        name: bank.name,
-        address: bank.address,
-        needs: bank.needs || ["This foodbank hasn't posted any needed items."],
-        phone: bank.phone || ['no phone number available.'],
-        email: bank.email || ['no email address available.'],
-        link: bank.urls.homepage || ['no website address available'],
-      }));
-      console.log(bankData);
+      console.log(results);
+
+      // const bankData = results.map((bank) => ({
+      //   // bankId: bank.id,
+      //   name: bank.name,
+      //   address: bank.address,
+      //   needs: bank.needs || ["This foodbank hasn't posted any needed items."],
+      //   phone: bank.phone || ['no phone number available.'],
+      //   email: bank.email || ['no email address available.'],
+      //   link: bank.urls.homepage || ['no website address available'],
+      // }));
+      // console.log(bankData);
       // setSearchedBanks(bankData);
       setSearchInput('');
     } catch (err) {
