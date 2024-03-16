@@ -2,21 +2,24 @@ import { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 // import { SAVE_BANK } from '../utils/mutations';
 import Auth from '../utils/auth';
-// import {} from '@mui/material';
+// import { FormControl } from '@mui/base/FormControl';
+import TextField from '@mui/material/TextField';
+import { FormControl, FormLabel } from '@mui/material';
+import Button from '@mui/material/Button';
 
 const BankSearch = () => {
-  const [searchedBanks, setSearchedBanks] = useState([]);
+  // const [searchedBanks, setSearchedBanks] = useState([]);
   const [searchInput, setSearchInput] = useState('');
   //   const [savedBankIds, setSavedBankIds] = useState(getSavedBankIds());
   //   const [saveBank, { error }] = useMutation(SAVE_BANK);
 
-  useEffect(() => {
-    return () => savedBankIds(savedBankIds);
-  });
+  // useEffect(() => {
+  //   return () => savedBankIds(savedBankIds);
+  // });
 
   const formSubmitHandler = async (event) => {
     event.preventDefault();
-
+    console.log('it works');
     if (!searchInput) {
       return false;
     }
@@ -40,8 +43,8 @@ const BankSearch = () => {
         email: bank.email || ['no email address available.'],
         link: bank.urls.homepage || ['no website address available'],
       }));
-
-      setSearchedBanks(bankData);
+      console.log(bankData);
+      // setSearchedBanks(bankData);
       setSearchInput('');
     } catch (err) {
       console.error(err);
@@ -51,10 +54,17 @@ const BankSearch = () => {
   return (
     <>
       test
-      <form action={searchInput}>
-        <input name="query" />
-        <button type="submit">Search</button>
-      </form>
+      <FormControl
+        onSubmit={formSubmitHandler}
+        value={searchInput}
+        onChange={(e) => setSearchInput(e.target.value)}
+      >
+        <form>
+          <FormLabel>Postcode</FormLabel>
+          <TextField type="text" variant="outlined" />
+          <Button type="submit">Submit</Button>
+        </form>
+      </FormControl>
     </>
   );
 };

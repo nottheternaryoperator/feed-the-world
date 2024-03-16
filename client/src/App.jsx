@@ -1,7 +1,7 @@
-import './App.css';
+// import './App.css';
 import { useState } from 'react';
 // import Navbar from './components/Navbar/navbar.jsx';
-import LoginForm from './components/login/Login.jsx';
+// import LoginForm from './components/login/Login.jsx';
 import {
   ApolloClient,
   InMemoryCache,
@@ -43,7 +43,7 @@ function App() {
         <BankSearch />
         {/* <Navbar /> */}
         {/* Conditionally render the LoginForm modal */}
-        {!isLoggedIn && <LoginForm onLoginSuccess={handleLoginSuccess} />}
+        {/* {!isLoggedIn && <LoginForm onLoginSuccess={handleLoginSuccess} />} */}
         {/* Render other components */}
       </>
     </ApolloProvider>
