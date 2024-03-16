@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
-// import { SAVE_BANK } from '../utils/mutations';
+import { SAVE_BANK } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { saveBankNames, getSavedBankNames } from '../utils/localStorage';
 // import { FormControl } from '@mui/base/FormControl';
 import TextField from '@mui/material/TextField';
 import { FormControl, FormLabel } from '@mui/material';
@@ -10,13 +11,14 @@ import Button from '@mui/material/Button';
 const BankSearch = () => {
   const [searchedBanks, setSearchedBanks] = useState([]);
   const [searchInput, setSearchInput] = useState('');
-  //   const [savedBankIds, setSavedBankIds] = useState(getSavedBankIds());
-  //   const [saveBank, { error }] = useMutation(SAVE_BANK);
+  const [savedBankNames, setSavedBankNames] = useState(getSavedBankNames());
+  const [saveBank, { error }] = useMutation(SAVE_BANK);
 
-  // useEffect(() => {
-  //   return () => savedBankIds(savedBankIds);
-  // });
+  useEffect(() => {
+    return () => saveBankNames(savedBankNames);
+  });
 
+  //function to handle the input form for postcode. it calls the api with the input from the form, and maps the response to bankData object.
   const formSubmitHandler = async (event) => {
     event.preventDefault();
     console.log(searchInput);
@@ -51,6 +53,27 @@ const BankSearch = () => {
       console.log(bankData);
       setSearchedBanks(bankData);
       setSearchInput('');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  //function to save the selected foodbanks to the database
+  const saveBankHandler = async (name) => {
+    const bankToSave = searchedBanks.find((bank) => bank.name === name);
+
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const { data } = await saveBank({
+        variables: { input: { ...bankToSave } },
+      });
+
+      setSavedBankNames([...savedBankNames, bankToSave.name]);
     } catch (err) {
       console.error(err);
     }
