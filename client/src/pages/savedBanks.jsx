@@ -18,3 +18,11 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import './savedBanks.css';
+
+const SavedBanks = () => {
+  const { loading, data } = useQuery(QUERY_ME);
+  const [removeBank, { error }] = useMutation(REMOVE_BANK);
+  const userData = data?.me || {};
+}; //end
+
+export default SavedBanks;
