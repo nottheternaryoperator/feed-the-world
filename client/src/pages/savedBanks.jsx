@@ -12,6 +12,7 @@ import {
   CardActions,
   CardContent,
   Typography,
+  fabClasses,
 } from '@mui/material';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -23,6 +24,24 @@ const SavedBanks = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [removeBank, { error }] = useMutation(REMOVE_BANK);
   const userData = data?.me || {};
-}; //end
 
+  const bankRemoveHandler = async (bankName) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const { data } = await removeBank({ variables: { bankName } });
+      removeBankName(bankName);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  if (loading) {
+    return <h2>LOADING...</h2>;
+  }
+  return <></>;
+}; //end
 export default SavedBanks;
