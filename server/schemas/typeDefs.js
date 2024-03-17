@@ -47,20 +47,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-export const SAVE_BANK = gql`
-mutation saveBank{$input: BankData!} {
-    saveBook(input: $input) {
-        _id
-        username
-        email
-        savedBanks {
-            name
-            address
-            needsphone
-            email
-            link
-            
-        }
-    }
-}`;

@@ -17,6 +17,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
+import './bankSearch.css';
 
 const BankSearch = () => {
   const [searchedBanks, setSearchedBanks] = useState([]);
