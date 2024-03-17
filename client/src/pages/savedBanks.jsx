@@ -42,6 +42,24 @@ const SavedBanks = () => {
   if (loading) {
     return <h2>LOADING...</h2>;
   }
-  return <></>;
+  return (
+    <>
+      <Container>
+        <Grid>
+          {userData.savedBanks.map((bank) => {
+            return (
+              <Card key={bank.bankName}>
+                <CardContent>
+                  <Typography>{bank.name}</Typography>
+                  <Typography>{bank.address}</Typography>
+                  <Typography>{bank.needs}</Typography>
+                </CardContent>
+              </Card>
+            );
+          })}{' '}
+        </Grid>
+      </Container>
+    </>
+  );
 }; //end
 export default SavedBanks;
