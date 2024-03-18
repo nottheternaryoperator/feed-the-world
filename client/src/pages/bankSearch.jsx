@@ -121,7 +121,11 @@ const BankSearch = () => {
                       )}
                       onClick={() => saveBankHandler(bank.bankName)}
                     >
-                      SAVE
+                      {savedBankNames?.some(
+                        (savedBankNames) => savedBankNames === bank.name
+                      )
+                        ? 'Foodbank saved!'
+                        : 'Add this foodbank!'}
                     </Button>
                   </CardActions>
                 </CardContent>
