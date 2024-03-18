@@ -1,5 +1,5 @@
 // import './App.css';
-import { useState } from 'react';
+// import { useState } from 'react';
 // import Navbar from './components/Navbar/navbar.jsx';
 // import LoginForm from './components/login/Login.jsx';
 import {
@@ -14,7 +14,6 @@ import BankSearch from './pages/bankSearch.jsx';
 import AppNavbar from './components/form/Navbar.jsx';
 
 import Footer from './components/footer/footer.jsx';
-
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -36,12 +35,6 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to manage login status
-
-  const handleLoginSuccess = () => {
-    setIsLoggedIn(true); // Set login status to true upon successful login
-  };
-
   return (
     <ApolloProvider client={client}>
       <>
