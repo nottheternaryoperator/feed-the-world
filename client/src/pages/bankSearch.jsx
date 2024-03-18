@@ -1,10 +1,11 @@
+
 import { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { SAVE_BANK } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { saveBankNames, getSavedBankNames } from '../utils/localStorage';
 // import { FormControl } from '@mui/base/FormControl';
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 import {
   CardActionArea,
   FormControl,
@@ -12,12 +13,12 @@ import {
   CardActions,
   CardContent,
   Typography,
-} from '@mui/material';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import './bankSearch.css';
+} from "@mui/material";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import "./bankSearch.css";
 
 const BankSearch = () => {
   const [searchedBanks, setSearchedBanks] = useState([]);
@@ -42,7 +43,7 @@ const BankSearch = () => {
         `https://www.givefood.org.uk/api/2/foodbanks/search/?address=${searchInput}` //put API in here
       );
       if (!response.ok) {
-        throw new Error('API response error');
+        throw new Error("API response error");
       }
       console.log(response);
 
@@ -57,16 +58,17 @@ const BankSearch = () => {
         needs: bank.needs.needs || [
           "This foodbank hasn't posted any needed items.",
         ],
-        phone: bank.phone || ['no phone number available.'],
-        email: bank.email || ['no email address available.'],
-        link: bank.urls.homepage || ['no website address available'],
+        phone: bank.phone || ["no phone number available."],
+        email: bank.email || ["no email address available."],
+        link: bank.urls.homepage || ["no website address available"],
       }));
       console.log(bankData);
       setSearchedBanks(bankData);
-      setSearchInput('');
+      setSearchInput("");
     } catch (err) {
       console.error(err);
     }
+
   };
 
   // function to save the selected foodbanks to the database
@@ -92,50 +94,37 @@ const BankSearch = () => {
 
   return (
     <>
-      <Container maxWidth="sm">
+      <Container maxWidth="sm" className="bank-search-panel">
         <FormControl
+          className="search-bar"
           onSubmit={formSubmitHandler}
           value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-        >
+          onChange={(e) => setSearchInput(e.target.value)}>
           <form>
-            <FormLabel>Postcode</FormLabel>
-            <TextField type="text" variant="outlined" />
+            <TextField type="text" placeholder="Postcode" variant="outlined" />
             <Button type="submit">Submit</Button>
           </form>
         </FormControl>
 
-        <Grid item xs={4} justify="flex-end">
-          {searchedBanks.map((bank) => {
-            return (
-              <Card key={bank.name}>
-                <CardContent>
-                  <Typography>{bank.name}</Typography>
-                  <Typography>{bank.address}</Typography>
-                  <Typography>{bank.needs}</Typography>
 
-                  <CardActions>
-                    <Button
-                      disabled={savedBankNames?.some(
-                        (savedBankNames) => savedBankNames === bank.name
-                      )}
-                      onClick={() => saveBankHandler(bank.bankName)}
-                    >
-                      {savedBankNames?.some(
-                        (savedBankNames) => savedBankNames === bank.name
-                      )
-                        ? 'Foodbank saved!'
-                        : 'Add this foodbank!'}
-                    </Button>
-                  </CardActions>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </Grid>
+        <div className="search-results">
+          {searchedBanks.map((bank) => (
+            <Card key={bank.name} className="card">
+              <CardContent>
+                <Typography>{bank.name}</Typography>
+                <Typography>{bank.address}</Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small">Favorite</Button>
+              </CardActions>
+            </Card>
+          ))}
+        </div>
+
       </Container>
     </>
   );
 };
 
 export default BankSearch;
+
