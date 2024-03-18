@@ -25,34 +25,37 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_BANK = gql`
-mutation saveBank{$input: BankData!} {
+  mutation saveBank($input: BankData!) {
     saveBank(input: $input) {
-        _id
-        username
+      _id
+      username
+      email
+      savedBanks {
+        name
+        address
+        needs
+        phone
         email
-        savedBanks {
-            name
-            address
-            needsphone
-            email
-            link
-        }
+        link
+      }
     }
-}`;
+  }
+`;
 
 export const REMOVE_BANK = gql`
-mutation removeBank{$input: BankData!} {
-    removeBank(input: $input) {
-        _id
-        username
+  mutation removeBank($bankName: name!) {
+    removeBank(bankName: $bankName) {
+      _id
+      username
+      email
+      savedBanks {
+        name
+        address
+        needs
+        phone
         email
-        savedBanks {
-            name
-            address
-            needsphone
-            email
-            link
-        }
+        link
+      }
     }
-}
+  }
 `;
