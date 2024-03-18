@@ -10,7 +10,11 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import BankSearch from './pages/bankSearch.jsx';
+
 import AppNavbar from './components/form/Navbar.jsx';
+
+import Footer from './components/footer/footer.jsx';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -48,6 +52,7 @@ function App() {
         {/* {!isLoggedIn && <LoginForm onLoginSuccess={handleLoginSuccess} />} */}
         {/* Render other components */}
       </>
+      <Footer />
     </ApolloProvider>
   );
 }
