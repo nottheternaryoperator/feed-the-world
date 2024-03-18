@@ -115,7 +115,12 @@ const BankSearch = () => {
                   <Typography>{bank.needs}</Typography>
 
                   <CardActions>
-                    <Button onClick={() => saveBankHandler(bank.bankName)}>
+                    <Button
+                      disabled={savedBankNames?.some(
+                        (savedBankNames) => savedBankNames === bank.name
+                      )}
+                      onClick={() => saveBankHandler(bank.bankName)}
+                    >
                       SAVE
                     </Button>
                   </CardActions>
