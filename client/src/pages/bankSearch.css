@@ -1,0 +1,35 @@
+.bank-search-panel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw; /* Adjust width as needed */
+    height: 100vh; /* Make the panel cover the entire height of the viewport */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    padding: 20px; /* Adjust padding as needed */
+    margin: 0; /* Reset margin */
+    background-color: #fff; /* Optional: Set background color */
+    border-right: 1px solid #ddd; /* Optional: Add border to visually separate from the rest of the page */
+  }
+  
+  .search-bar {
+    margin-bottom: 20px; /* Adjust margin as needed */
+  }
+  
+  .search-results {
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  
+  .card {
+    margin-bottom: 20px; /* Adjust margin as needed */
+    border: 1px solid #ddd; /* Optional: Add border to cards */
+    border-radius: 8px; /* Optional: Add border radius to cards */
+    height: 145px;
+    width: calc(100vw - 40px); /* Adjust width to fit the viewport width minus padding */
+    max-width: 400px; /* Set maximum width for the card */
+    font-size: 10px; /* Optional: Adjust font size */
+  }
+  .MuiContainer-root {
+    max-width: 100% !important; /* Override max-width to make it full width */
+    width: 100% !important; /* Ensure container fills the entire width */
+  }
+
