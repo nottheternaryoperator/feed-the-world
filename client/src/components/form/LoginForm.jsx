@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 // import { loginUser } from '../utils/API';
-import Auth from '../utils/auth';
-import { USER_LOGIN } from '../utils/mutations';
+import Auth from '../../utils/auth';
+import { USER_LOGIN } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
 
 const LoginForm = () => {
@@ -97,3 +97,4 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+

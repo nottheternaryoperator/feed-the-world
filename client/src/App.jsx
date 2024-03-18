@@ -10,7 +10,11 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import BankSearch from './pages/bankSearch.jsx';
+
+import AppNavbar from './components/form/Navbar.jsx';
+
 import Footer from './components/footer/footer.jsx';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -41,6 +45,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <>
+        <AppNavbar />
         <BankSearch />
         {/* <Navbar /> */}
         {/* Conditionally render the LoginForm modal */}
