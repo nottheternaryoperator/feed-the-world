@@ -13,7 +13,7 @@ export const QUERY_ME = gql`
         needs
         phone
         email
-        homepageLink
+        link
       }
     }
   }
