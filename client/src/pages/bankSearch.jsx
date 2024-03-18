@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-// import { useMutation } from '@apollo/client';
-// import { SAVE_BANK } from '../utils/mutations';
-// import Auth from '../utils/auth';
-// import { saveBankNames, getSavedBankNames } from '../utils/localStorage';
+import { useMutation } from '@apollo/client';
+import { SAVE_BANK } from '../utils/mutations';
+import Auth from '../utils/auth';
+import { saveBankNames, getSavedBankNames } from '../utils/localStorage';
 // import { FormControl } from '@mui/base/FormControl';
 import TextField from '@mui/material/TextField';
 import {
@@ -22,12 +22,12 @@ import './bankSearch.css';
 const BankSearch = () => {
   const [searchedBanks, setSearchedBanks] = useState([]);
   const [searchInput, setSearchInput] = useState('');
-  // const [savedBankNames, setSavedBankNames] = useState(getSavedBankNames());
-  // const [saveBank, { error }] = useMutation(SAVE_BANK);
+  const [savedBankNames, setSavedBankNames] = useState(getSavedBankNames());
+  const [saveBank, { error }] = useMutation(SAVE_BANK);
 
-  // useEffect(() => {
-  //   // return () => saveBankNames(savedBankNames);
-  // });
+  useEffect(() => {
+    return () => saveBankNames(savedBankNames);
+  });
 
   //function to handle the input form for postcode. it calls the api with the input from the form, and maps the response to bankData object.
   const formSubmitHandler = async (event) => {
@@ -69,26 +69,26 @@ const BankSearch = () => {
     }
   };
 
-  //function to save the selected foodbanks to the database
-  // const saveBankHandler = async (name) => {
-  //   const bankToSave = searchedBanks.find((bank) => bank.name === name);
+  // function to save the selected foodbanks to the database
+  const saveBankHandler = async (name) => {
+    const bankToSave = searchedBanks.find((bank) => bank.name === name);
 
-  //   const token = Auth.loggedIn() ? Auth.getToken() : null;
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-  //   if (!token) {
-  //     return false;
-  //   }
+    if (!token) {
+      return false;
+    }
 
-  //   try {
-  //     const { data } = await saveBank({
-  //       variables: { input: { ...bankToSave } },
-  //     });
+    try {
+      const { data } = await saveBank({
+        variables: { input: { ...bankToSave } },
+      });
 
-  //     setSavedBankNames([...savedBankNames, bankToSave.name]);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
+      setSavedBankNames([...savedBankNames, bankToSave.name]);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <>
@@ -113,6 +113,21 @@ const BankSearch = () => {
                   <Typography>{bank.name}</Typography>
                   <Typography>{bank.address}</Typography>
                   <Typography>{bank.needs}</Typography>
+
+                  <CardActions>
+                    <Button
+                      disabled={savedBankNames?.some(
+                        (savedBankNames) => savedBankNames === bank.name
+                      )}
+                      onClick={() => saveBankHandler(bank.bankName)}
+                    >
+                      {savedBankNames?.some(
+                        (savedBankNames) => savedBankNames === bank.name
+                      )
+                        ? 'Foodbank saved!'
+                        : 'Add this foodbank!'}
+                    </Button>
+                  </CardActions>
                 </CardContent>
               </Card>
             );

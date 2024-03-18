@@ -53,7 +53,7 @@ const resolvers = {
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedBanks: { bankId } } },
+          { $pull: { savedBanks: { bankName } } },
           { new: true }
         );
       }

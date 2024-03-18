@@ -28,8 +28,7 @@ const typeDefs = gql`
     user(userId: ID!): User
   }
 
-  input bankData {
-    bankId: ID!
+  input BankData {
     name: String!
     address: [String]
     needs: [String]
@@ -41,7 +40,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveBank(input: bankData!): User
+    saveBank(input: BankData!): User
     removeBank(bankId: ID!): User
   }
 `;
