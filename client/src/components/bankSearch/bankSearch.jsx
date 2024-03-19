@@ -93,8 +93,9 @@ const BankSearch = () => {
           {searchedBanks.map((bank) => (
             <Card key={bank.name} className="card">
               <CardContent>
-                <Typography>{bank.name}</Typography>
-                <Typography>{bank.address}</Typography>
+                <Typography>Name: {bank.name}</Typography>
+                
+                <Typography>Address: {bank.address}</Typography>
               </CardContent>
               <CardActions>
                 <Button

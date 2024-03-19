@@ -1,6 +1,8 @@
-  .footer {
-    width: 100%;
-    padding: 20px;
-    color: blue;
-    text-align: center;
-  }
+
+.footer {
+  width: 100%; /* Occupy the entire width of the viewport */
+  background-color: #333; /* Optional: Set footer background color */
+  color: #fff; /* Optional: Set footer text color */
+  padding: 10px; /* Adjust padding as needed */
+  margin-top: auto; /* Push the footer to the bottom */
+}
