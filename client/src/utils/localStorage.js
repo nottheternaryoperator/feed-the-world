@@ -14,7 +14,7 @@ export const saveBankNames = (bankNameArr) => {
   }
 };
 
-export const removeBankNames = (bankName) => {
+export const removeBankName = (bankName) => {
   const savedBankNames = localStorage.getItem('saved_banks')
     ? JSON.parse(localStorage.getItem('saved_banks'))
     : null;

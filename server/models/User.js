@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 // import schema from Bank.js
-const Bank = require('./Bank');
+const bankSchema = require('./Bank');
 
 const bcrypt = require('bcrypt');
 
@@ -21,7 +21,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    foodbanks: [Bank],
+    savedBanks: [bankSchema],
   },
   // set this to use virtual below
   {
@@ -46,6 +46,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-const User = model('user', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;

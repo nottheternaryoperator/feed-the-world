@@ -6,6 +6,7 @@ const typeDefs = gql`
     username: String!
     email: String!
     password: String
+    savedBanks: [Bank]
   }
 
   type Auth {
@@ -14,10 +15,9 @@ const typeDefs = gql`
   }
 
   type Bank {
-    bankId: ID!
     name: String!
-    address: [String]
-    needs: [String]
+    address: String
+    needs: String
     phone: String
     email: String
     link: String
@@ -30,8 +30,8 @@ const typeDefs = gql`
 
   input BankData {
     name: String!
-    address: [String]
-    needs: [String]
+    address: String
+    needs: String
     phone: String
     email: String
     link: String
@@ -41,7 +41,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveBank(input: BankData!): User
-    removeBank(bankId: ID!): User
+    removeBank(bankName: String!): User
   }
 `;
 
