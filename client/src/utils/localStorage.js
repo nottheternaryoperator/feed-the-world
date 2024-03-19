@@ -6,15 +6,15 @@ export const getSavedBankNames = () => {
   return savedBankNames;
 };
 
-export const saveBankNames = (bankIdArr) => {
-  if (bankIdArr.length) {
-    localStorage.setItem('saved_banks', JSON.stringify(bankIdArr));
+export const saveBankNames = (bankNameArr) => {
+  if (bankNameArr.length) {
+    localStorage.setItem('saved_banks', JSON.stringify(bankNameArr));
   } else {
     localStorage.removeItem('saved_banks');
   }
 };
 
-export const removeBankNames = (bankId) => {
+export const removeBankNames = (bankName) => {
   const savedBankNames = localStorage.getItem('saved_banks')
     ? JSON.parse(localStorage.getItem('saved_banks'))
     : null;
@@ -24,7 +24,7 @@ export const removeBankNames = (bankId) => {
   }
 
   const updatedSavedBankNames = savedBankNames?.filter(
-    (savedBankId) => savedBankId !== bankId
+    (savedBankNames) => savedBankNames !== bankName
   );
   localStorage.setItem('saved_banks', JSON.stringify(updatedSavedBankNames));
 
