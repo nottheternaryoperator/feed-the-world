@@ -10,6 +10,7 @@ import Container from '@mui/material/Container';
 import Card from '@mui/material/Card';
 import { CardContent, CardActions, Typography } from '@mui/material';
 import './bankSearch.css';
+import SavedBanks from '../../pages/savedBanks';
 
 const BankSearch = () => {
   const [searchedBanks, setSearchedBanks] = useState([]);
@@ -96,8 +97,18 @@ const BankSearch = () => {
                 <Typography>{bank.address}</Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" onClick={() => saveBankHandler}>
-                  Favorite
+                <Button
+                  disabled={savedBankNames?.some(
+                    (savedBankNames) => savedBankNames === bank.name
+                  )}
+                  size="small"
+                  onClick={() => saveBankHandler(bank.name)}
+                >
+                  {savedBankNames?.some(
+                    (savedBankNames) => savedBankNames === bank.name
+                  )
+                    ? 'saved to favourites!'
+                    : 'Save me to favourites!'}
                 </Button>
               </CardActions>
             </Card>
