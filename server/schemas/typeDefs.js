@@ -6,6 +6,7 @@ const typeDefs = gql`
     username: String!
     email: String!
     password: String
+    savedBanks: [Bank]
   }
 
   type Auth {
@@ -14,7 +15,6 @@ const typeDefs = gql`
   }
 
   type Bank {
-    bankId: ID!
     name: String!
     address: [String]
     needs: [String]

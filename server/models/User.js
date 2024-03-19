@@ -21,7 +21,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    foodbanks: [Bank],
+    savedBanks: [Bank],
   },
   // set this to use virtual below
   {

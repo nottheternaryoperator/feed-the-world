@@ -1,10 +1,16 @@
 // App.jsx
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import BankSearch from './components/bankSearch/bankSearch.jsx';
 import AppNavbar from './components/form/Navbar.jsx';
 import Footer from './components/footer/footer.jsx';
 import './App.css'; // Import the CSS file
+import SavedBanks from './pages/savedBanks.jsx';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -33,6 +39,7 @@ function App() {
         <div className="content-container">
           {/* Add other components here */}
           <BankSearch />
+          <SavedBanks />
         </div>
         <Footer />
       </div>

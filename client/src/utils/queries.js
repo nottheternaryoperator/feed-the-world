@@ -6,8 +6,7 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      foodbanks {
-        bankId
+      savedBanks {
         name
         address
         needs

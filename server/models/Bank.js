@@ -1,4 +1,4 @@
-const { Schema, Types } = require('mongoose');
+const { Schema } = require('mongoose');
 
 const bankSchema = new Schema(
   {
@@ -7,15 +7,16 @@ const bankSchema = new Schema(
       default: () => new Types.ObjectId(),
     },
     name: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
-    address: [String],
-    needs: [String],
-    phone: String,
-    email: String,
-    homepageLink : String,
+    address: { type: String },
+    needs: { type: String },
+    phone: { type: String },
+    email: { type: String },
+    link: { type: String },
   },
+
   {
     toJSON: {
       getters: true,
