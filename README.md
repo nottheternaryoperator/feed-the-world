@@ -64,6 +64,10 @@ MUI: https://mui.com
 
 ![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
 
+Iconify: https://iconify.design
+
+![Iconify](https://img.shields.io/badge/Iconify-0081CB?style=for-the-badge&logo=iconify&logoColor=white)
+
 Give Food API: https://www.givefood.org.uk/api/
 
 ## Installation Instructions
