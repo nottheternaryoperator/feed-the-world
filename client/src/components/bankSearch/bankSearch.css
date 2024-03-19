@@ -1,20 +1,24 @@
-.bank-search-panel {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw; /* Adjust width as needed */
-    height: 100vh; /* Make the panel cover the entire height of the viewport */
-    overflow-y: auto; /* Enable vertical scrolling if content overflows */
-    padding: 20px; /* Adjust padding as needed */
-    margin: 0; /* Reset margin */
-    background-color: #fff; /* Optional: Set background color */
-    border-right: 1px solid #ddd; /* Optional: Add border to visually separate from the rest of the page */
-  }
-  
+
   .search-bar {
     margin-bottom: 20px; /* Adjust margin as needed */
+    display: flex;
+    align-items: center;
   }
-  
+  .search-bar button {
+    margin-left: 10 px;
+    color: blue;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: grey;
+  }
+
+  .search-bar button:hover {
+    background-color: #ff5733;
+    color: aqua;
+  }
+  .search-bar input {
+    height: 6px;
+  }
   .search-results {
     margin-top: 20px; /* Adjust margin as needed */
   }

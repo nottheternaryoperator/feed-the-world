@@ -1,62 +1,46 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  background: transparent;
-  font-family: 'Nunito', sans-serif;
-  color: lightgrey;
-}
+
 
 body {
-  background: rgb(30, 30, 30);
-  color: rgb(30, 30, 30);
-  overflow: hidden;
-  overflow-y: scroll;
+  background-color: #474747db; /* Set background color for the body */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.muiButtonBase-root {
+  color: #f9b66a; /* Adjust color for specific elements if needed */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Set minimum height to 100% of the viewport height */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.content-container {
+  flex-grow: 1; /* Allow the content to grow to fill the remaining space */
+  padding: 20px; /* Adjust padding as needed */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.bank-search-panel {
+  width: 500px; /* Set the width of the panel */
+  flex-shrink: 0; /* Prevent the panel from shrinking */
+  margin-bottom: 20px;
+  background-color: #fff; /* Optional: Set background color */
+  /* border-right: 1px solid #862e2e; */
 }
+
+.search-bar {
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.search-results {
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.card {
+  margin-bottom: 20px; /* Adjust margin as needed */
+  border: 1.5px solid #ddd; /* Optional: Add border to cards */
+  border-radius: 10px; /* Optional: Add border radius to cards */
+  height: 130px;
+  font-size: 8px; /* Optional: Adjust font size */
+}
+
+

@@ -2,7 +2,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import { REMOVE_BANK } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { removeBankName } from '../utils/localStorage';
+// import { removeBankName } from '../utils/localStorage';
 
 import TextField from '@mui/material/TextField';
 import {
@@ -52,7 +52,7 @@ const SavedBanks = () => {
                 <CardContent>
                   <Typography>{bank.name}</Typography>
                   <Typography>{bank.address}</Typography>
-                  <Typography>{bank.needs}</Typography>
+                  <Typography>{bank.needs}</Typography> 
                 </CardContent>
               </Card>
             );
