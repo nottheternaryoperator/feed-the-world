@@ -25,14 +25,18 @@ const SavedBanks = () => {
   const [removeBank, { error }] = useMutation(REMOVE_BANK);
   const userData = data?.me || {};
 
-  const bankRemoveHandler = async (bankName) => {
+
+  const bankRemoveHandler = async (name) => {
+
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     if (!token) {
       return false;
     }
     try {
-      const { data } = await removeBank({ variables: { bankName } });
-      removeBankName(bankName);
+
+      const { data } = await removeBank({ variables: { name } });
+      removeBankName(name);
+
     } catch (error) {
       console.error(error);
     }
@@ -47,11 +51,17 @@ const SavedBanks = () => {
           <Grid>
             {userData.savedBanks.map((bank) => {
               return (
-                <Card key={bank.bankName}>
+                <Card key={bank.name}>
                   <CardContent>
                     <Typography>{bank.name}</Typography>
                     <Typography>{bank.address}</Typography>
                     <Typography>{bank.needs}</Typography>
+                    <Button
+                      size="small"
+                      onClick={() => bankRemoveHandler(bank.name)}
+                    >
+                      Un-favourite me
+                    </Button>
                   </CardContent>
                 </Card>
               );

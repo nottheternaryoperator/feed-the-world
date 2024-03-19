@@ -43,8 +43,8 @@ export const SAVE_BANK = gql`
 `;
 
 export const REMOVE_BANK = gql`
-  mutation removeBank($bankName: name!) {
-    removeBank(bankName: $bankName) {
+  mutation removeBank($name: String!) {
+    removeBank(name: $name) {
       _id
       username
       email
