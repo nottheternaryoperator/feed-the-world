@@ -2,7 +2,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import { REMOVE_BANK } from '../utils/mutations';
 import Auth from '../utils/auth';
-// import { removeBankName } from '../utils/localStorage';
+import { removeBankName } from '../utils/localStorage';
 
 import TextField from '@mui/material/TextField';
 import {
@@ -22,21 +22,21 @@ import './savedBanks.css';
 
 const SavedBanks = () => {
   const { loading, data } = useQuery(QUERY_ME);
-  // const [removeBank, { error }] = useMutation(REMOVE_BANK);
+  const [removeBank, { error }] = useMutation(REMOVE_BANK);
   const userData = data?.me || {};
 
-  // const bankRemoveHandler = async (bankName) => {
-  //   const token = Auth.loggedIn() ? Auth.getToken() : null;
-  //   if (!token) {
-  //     return false;
-  //   }
-  //   try {
-  //     const { data } = await removeBank({ variables: { bankName } });
-  //     removeBankName(bankName);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const bankRemoveHandler = async (name) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+    if (!token) {
+      return false;
+    }
+    try {
+      const { data } = await removeBank({ variables: { name } });
+      removeBankName(name);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   if (loading) {
     return <h2>LOADING...</h2>;
   }
@@ -47,11 +47,17 @@ const SavedBanks = () => {
           <Grid>
             {userData.savedBanks.map((bank) => {
               return (
-                <Card key={bank.bankName}>
+                <Card key={bank.name}>
                   <CardContent>
                     <Typography>{bank.name}</Typography>
                     <Typography>{bank.address}</Typography>
                     <Typography>{bank.needs}</Typography>
+                    <Button
+                      size="small"
+                      onClick={() => bankRemoveHandler(bank.name)}
+                    >
+                      Un-favourite me
+                    </Button>
                   </CardContent>
                 </Card>
               );

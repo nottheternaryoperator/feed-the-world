@@ -14,7 +14,7 @@ export const saveBankNames = (bankNameArr) => {
   }
 };
 
-export const removeBankName = (bankName) => {
+export const removeBankName = (name) => {
   const savedBankNames = localStorage.getItem('saved_banks')
     ? JSON.parse(localStorage.getItem('saved_banks'))
     : null;
@@ -24,7 +24,7 @@ export const removeBankName = (bankName) => {
   }
 
   const updatedSavedBankNames = savedBankNames?.filter(
-    (savedBankNames) => savedBankNames !== bankName
+    (savedBankNames) => savedBankNames !== name
   );
   localStorage.setItem('saved_banks', JSON.stringify(updatedSavedBankNames));
 
