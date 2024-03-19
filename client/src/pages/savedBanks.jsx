@@ -25,14 +25,18 @@ const SavedBanks = () => {
   const [removeBank, { error }] = useMutation(REMOVE_BANK);
   const userData = data?.me || {};
 
+
   const bankRemoveHandler = async (name) => {
+
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     if (!token) {
       return false;
     }
     try {
+
       const { data } = await removeBank({ variables: { name } });
       removeBankName(name);
+
     } catch (error) {
       console.error(error);
     }
