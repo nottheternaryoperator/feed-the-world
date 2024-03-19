@@ -37,14 +37,20 @@ function App() {
       <div className="app-container">
         <AppNavbar />
         <div className="content-container">
-          {/* Add other components here */}
-          <BankSearch />
-          <SavedBanks />
+          {/* Bank Search Container */}
+          <div className="bank-search-container">
+            <BankSearch />
+          </div>
+          {/* Saved Banks Container */}
+          <div className="saved-banks-container">
+            <SavedBanks />
+          </div>
         </div>
         <Footer />
       </div>
     </ApolloProvider>
   );
 }
+
 
 export default App;

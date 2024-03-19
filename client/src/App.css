@@ -1,11 +1,9 @@
-
+/* app.css */
 
 body {
   background-color: #474747db; /* Set background color for the body */
-}
-
-.muiButtonBase-root {
-  color: #f9b66a; /* Adjust color for specific elements if needed */
+  margin: 0; /* Remove default margin to ensure full viewport coverage */
+  padding: 0; /* Remove default padding to ensure full viewport coverage */
 }
 
 .app-container {
@@ -17,14 +15,23 @@ body {
 .content-container {
   flex-grow: 1; /* Allow the content to grow to fill the remaining space */
   padding: 20px; /* Adjust padding as needed */
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow content to wrap */
+  gap: 20px; /* Add gap between elements */
 }
 
 .bank-search-panel {
   width: 500px; /* Set the width of the panel */
   flex-shrink: 0; /* Prevent the panel from shrinking */
+  background-color: #fff; /* Optional: Set background color */
+  border-radius: 8px; /* Optional: Add border radius */
+}
+
+.saved-banks-panel {
+  width: calc(50% - 10px); /* Set the width of the panel to half minus some gap */
+  flex-shrink: 0; /* Prevent the panel from shrinking */
   margin-bottom: 20px;
   background-color: #fff; /* Optional: Set background color */
-  /* border-right: 1px solid #862e2e; */
 }
 
 .search-bar {
@@ -33,14 +40,29 @@ body {
 
 .search-results {
   margin-top: 20px; /* Adjust margin as needed */
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next row */
 }
 
+/* Add a gap between cards */
 .card {
-  margin-bottom: 20px; /* Adjust margin as needed */
-  border: 1.5px solid #ddd; /* Optional: Add border to cards */
-  border-radius: 10px; /* Optional: Add border radius to cards */
-  height: 130px;
-  font-size: 8px; /* Optional: Adjust font size */
+  border: 1px solid #ddd; /* Optional: Add border to cards */
+  border-radius: 8px; /* Optional: Add border radius to cards */
+  width: 100%; /* Occupy full width of container */
+  max-width: 500px; /* Set maximum width for the card */
+  padding: 20px; /* Add padding to the card */
 }
 
+/* Make the labels bold */
+.card-content {
+  font-weight: bold;
+}
 
+.footer {
+  flex-shrink: 0; /* Prevent the footer from shrinking */
+  width: 100%; /* Occupy the entire width of the viewport */
+  background-color: #333; /* Optional: Set footer background color */
+  color: #fff; /* Optional: Set footer text color */
+  padding: 10px; /* Adjust padding as needed */
+  margin-top: auto; /* Push the footer to the bottom */
+}

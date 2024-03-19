@@ -45,17 +45,21 @@ const SavedBanks = () => {
     return <h2>LOADING...</h2>;
   }
   return (
+    <div className="saved-bank-container">
     <>
       {Auth.loggedIn() ? (
         <Container>
           <Grid>
             {userData.savedBanks.map((bank) => {
               return (
+                <div className="fave-results">
                 <Card key={bank.name}>
                   <CardContent>
-                    <Typography>{bank.name}</Typography>
-                    <Typography>{bank.address}</Typography>
-                    <Typography>{bank.needs}</Typography>
+                    <Typography>Name: {bank.name}</Typography>
+                    <br />
+                    <Typography>Address: {bank.address}</Typography>
+                    <br />
+                    <Typography>Urgent Requirements: <ul><li>{bank.needs}</li></ul></Typography>
                     <Button
                       size="small"
                       onClick={() => bankRemoveHandler(bank.name)}
@@ -64,6 +68,7 @@ const SavedBanks = () => {
                     </Button>
                   </CardContent>
                 </Card>
+                </div>
               );
             })}{' '}
           </Grid>
@@ -72,6 +77,7 @@ const SavedBanks = () => {
         <div>NOT LOGGED IN</div>
       )}
     </>
+    </div>
   );
 }; //end
 export default SavedBanks;
