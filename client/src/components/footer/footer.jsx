@@ -20,6 +20,24 @@ const Footer = () => {
   const navigate = useNavigate();
   return (
     <footer>
+      <Grid
+          container
+          direction="row"
+          justifyContent="space-evenly"
+          alignItems="center"
+          rowSpacing={2}
+        >
+          {links.map((link, i) => (
+            <div key={i}>
+              <Link component="a" href={link.href}>
+                <IconButton color="inherit" size="medium">
+                  <Icon icon={link.icon} />
+                </IconButton>
+              </Link>
+              <p>{link.name}</p>
+            </div>
+          ))}
+        </Grid>
       <div className="container text-center mb-5">
         {location.pathname !== '/' && (
           <button
@@ -42,24 +60,6 @@ const Footer = () => {
           by the Not The Ternary Operator &#169; 2024
         </h4>
       </div>
-      <Grid
-          container
-          direction="row"
-          justifyContent="space-evenly"
-          alignItems="center"
-          rowSpacing={2}
-        >
-          {links.map((link, i) => (
-            <div key={i}>
-              <Link component="a" href={link.href}>
-                <IconButton color="inherit" size="medium">
-                  <Icon icon={link.icon} />
-                </IconButton>
-              </Link>
-              <p>{link.name}</p>
-            </div>
-          ))}
-        </Grid>
     </footer>
   );
 };
