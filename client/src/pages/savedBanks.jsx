@@ -25,18 +25,17 @@ const SavedBanks = () => {
   const [removeBank, { error }] = useMutation(REMOVE_BANK);
   const userData = data?.me || {};
 
-
   const bankRemoveHandler = async (name) => {
-
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     if (!token) {
       return false;
     }
     try {
-
-      const { data } = await removeBank({ variables: { name } });
       removeBankName(name);
-
+      const { data } = await removeBank({ variables: { name } });
+      if (error) {
+        throw new Error('something went wrong!');
+      }
     } catch (error) {
       console.error(error);
     }
@@ -46,37 +45,42 @@ const SavedBanks = () => {
   }
   return (
     <div className="saved-bank-container">
-    <>
-      {Auth.loggedIn() ? (
-        <Container>
-          <Grid>
-            {userData.savedBanks.map((bank) => {
-              return (
-                <div className="fave-results">
-                <Card key={bank.name}>
-                  <CardContent>
-                    <Typography>Name: {bank.name}</Typography>
-                    <br />
-                    <Typography>Address: {bank.address}</Typography>
-                    <br />
-                    <Typography>Urgent Requirements: <ul><li>{bank.needs}</li></ul></Typography>
-                    <Button
-                      size="small"
-                      onClick={() => bankRemoveHandler(bank.name)}
-                    >
-                      Un-favourite me
-                    </Button>
-                  </CardContent>
-                </Card>
-                </div>
-              );
-            })}{' '}
-          </Grid>
-        </Container>
-      ) : (
-        <div>NOT LOGGED IN</div>
-      )}
-    </>
+      <>
+        {Auth.loggedIn() ? (
+          <Container>
+            <Grid>
+              {userData.savedBanks.map((bank) => {
+                return (
+                  <div className="fave-results">
+                    <Card key={bank.name}>
+                      <CardContent>
+                        <Typography>Name: {bank.name}</Typography>
+                        <br />
+                        <Typography>Address: {bank.address}</Typography>
+                        <br />
+                        <Typography>
+                          Urgent Requirements:{' '}
+                          <ul>
+                            <li>{bank.needs}</li>
+                          </ul>
+                        </Typography>
+                        <Button
+                          size="small"
+                          onClick={() => bankRemoveHandler(bank.name)}
+                        >
+                          Un-favourite me
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </div>
+                );
+              })}{' '}
+            </Grid>
+          </Container>
+        ) : (
+          <div>NOT LOGGED IN</div>
+        )}
+      </>
     </div>
   );
 }; //end
