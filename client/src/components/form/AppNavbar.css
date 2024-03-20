@@ -12,3 +12,21 @@
 .signUp {
   color: rgb(30, 30, 30)
 }
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  object-fit: cover;
+  color: rgb(30, 30, 30);
+  height: 100px;
+  margin-right: 20px;
+}
+
+.slogan {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  color: rgb(30, 30, 30);
+}
