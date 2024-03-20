@@ -4,6 +4,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 import './AppNavbar.css';
+import Logo from '../../assets/feed-the-world-alpha.png';
 
 import Auth from '../../utils/auth';
 
@@ -13,8 +14,12 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar className="loginBar">
+      <Navbar className="loginBar" expand="lg">
         <Container fluid>
+          <Navbar.Brand href='/' className="brand">
+            <img src={Logo} alt="logo" className='logo'/>
+            <span className="slogan">Help us support the hungry</span> 
+          </Navbar.Brand>
           <Navbar.Collapse id="navbar" className="d-flex flex-row-reverse">
             <Nav className="ml-auto d-flex">
               {/* if user is logged in show saved books and logout */}
