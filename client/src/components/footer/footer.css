@@ -1,7 +1,7 @@
 .footer {
   flex-shrink: 0; /* Prevent the footer from shrinking */
   width: 100%; /* Occupy the entire width of the viewport */
-  background-color: #F3C9BA; /* Optional: Set footer background color */
+  background-color: #F9CBCC; /* Optional: Set footer background color */
   color: rgb(30, 30, 30); /* Optional: Set footer text color */
   padding: 10px; /* Adjust padding as needed */
   margin-top: auto; /* Push the footer to the bottom */
