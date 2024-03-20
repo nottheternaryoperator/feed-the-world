@@ -29,19 +29,20 @@ It could similarly be used by government agencies for their own initiatives.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## User Story
-* As a user, I want to be able to see food banks around the uk.
 
-* As a user, I want to be able to search for food banks near a location i searched for.
+* As a user, I want to be able to see food banks around the UK.
 
-* As a user, I want to be able to see the needs for the foodbanks i have searched.
+* As a user, I want to be able to search for food banks near a location I have searched for.
+
+* As a user, I want to be able to see the most urgent needs for the food banks that i have searched.
 
 * As a user, I want to be able to sign up and log in.
 
-* As a user, I want to be able save certain food banks once i have logged in.
+* As a user, I want to be able save certain food banks pertinent to my interests and location once I have logged in.
 
-* As a user, I want to be able to see all my save food banks whenever i log in.
+* As a user, I want to be able to see all my save food banks whenever I log in.
 
-* As a user, I want to be able to remove foodbanks that i have saved.
+* As a user, I want to be able to remove food banks that I have saved if they are no longer relevant.
 
 ## Technologies Used
 
