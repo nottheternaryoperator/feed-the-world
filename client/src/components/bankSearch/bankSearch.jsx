@@ -94,7 +94,8 @@ const BankSearch = () => {
                 <Typography>Address: {bank.address}</Typography>
               </CardContent>
               <CardActions>
-                <Button
+                <Button 
+                  className='addButton'
                   disabled={savedBankNames?.some(
                     (savedBankNames) => savedBankNames === bank.name
                   )}

@@ -68,7 +68,7 @@ const SavedBanks = () => {
                           size="small"
                           onClick={() => bankRemoveHandler(bank.name)}
                         >
-                          Un-favourite me
+                          Remove favourite
                         </Button>
                       </CardContent>
                     </Card>
