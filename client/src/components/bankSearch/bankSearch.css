@@ -39,3 +39,6 @@
     width: 500px !important; /* Ensure container fills the entire width */
   }
 
+.addButton {
+  color: #3E625F !important;
+}
