@@ -37,3 +37,12 @@
   font-size: 1.5rem;
   color: rgb(30, 30, 30);
 }
+
+@media screen and (max-width: 550px) {
+  .slogan {
+    font-size: 50%; /* Adjust the font size as needed */
+  }
+  .logo {
+    height: 50px;
+  }
+}
