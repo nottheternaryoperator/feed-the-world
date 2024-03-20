@@ -1,5 +1,12 @@
 /* AppNavbar.css */
 
+.indie-flower-regular {
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .navbar nav-link:hover {
     background-color: #F9CBCC;
     color: #3E625F;
@@ -26,7 +33,7 @@
 }
 
 .slogan {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Indie Flower", cursive;
   font-size: 1.5rem;
   color: rgb(30, 30, 30);
 }
