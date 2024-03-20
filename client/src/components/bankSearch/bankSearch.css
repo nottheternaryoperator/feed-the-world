@@ -3,6 +3,7 @@
     margin-bottom: 20px; /* Adjust margin as needed */
     display: flex;
     align-items: center;
+    width: 40vw;
   }
   .search-bar button {
     margin-left: 10 px;
@@ -21,6 +22,7 @@
   }
   .search-results {
     margin-top: 20px; /* Adjust margin as needed */
+    width: 40vw;
   }
   
   .card {
@@ -29,11 +31,11 @@
     border-radius: 8px; /* Optional: Add border radius to cards */
     height: 145px;
     width: calc(100vw - 40px); /* Adjust width to fit the viewport width minus padding */
-    max-width: 400px; /* Set maximum width for the card */
+    max-width: 100%; /* Set maximum width for the card */
     font-size: 10px; /* Optional: Adjust font size */
   }
   .MuiContainer-root {
     max-width: 100% !important; /* Override max-width to make it full width */
-    width: 100% !important; /* Ensure container fills the entire width */
+    width: 500px !important; /* Ensure container fills the entire width */
   }
 
