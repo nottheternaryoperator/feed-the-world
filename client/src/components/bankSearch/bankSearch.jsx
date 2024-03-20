@@ -10,7 +10,6 @@ import Container from '@mui/material/Container';
 import Card from '@mui/material/Card';
 import { CardContent, CardActions, Typography } from '@mui/material';
 import './bankSearch.css';
-import SavedBanks from '../../pages/savedBanks';
 
 const BankSearch = () => {
   const [searchedBanks, setSearchedBanks] = useState([]);
@@ -41,12 +40,10 @@ const BankSearch = () => {
       const bankData = results.map((bank) => ({
         name: bank.name,
         address: bank.address,
-        needs: bank.needs.needs || [
-          "This foodbank hasn't posted any needed items.",
-        ],
-        phone: bank.phone || ['no phone number available.'],
-        email: bank.email || ['no email address available.'],
-        link: bank.urls.homepage || ['no website address available'],
+        needs: bank.needs.needs,
+        phone: bank.phone,
+        email: bank.email,
+        link: bank.urls.homepage,
       }));
       setSearchedBanks(bankData);
       setSearchInput('');
@@ -65,11 +62,10 @@ const BankSearch = () => {
     }
 
     try {
+      setSavedBankNames([...savedBankNames, bankToSave.name]);
       const { data } = await saveBank({
         variables: { input: { ...bankToSave } },
       });
-
-      setSavedBankNames([...savedBankNames, bankToSave.name]);
     } catch (err) {
       console.error(err);
     }
@@ -94,7 +90,7 @@ const BankSearch = () => {
             <Card key={bank.name} className="card">
               <CardContent>
                 <Typography>Name: {bank.name}</Typography>
-                
+
                 <Typography>Address: {bank.address}</Typography>
               </CardContent>
               <CardActions>
