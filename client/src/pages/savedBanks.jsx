@@ -3,6 +3,7 @@ import { QUERY_ME } from '../utils/queries';
 import { REMOVE_BANK } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { removeBankName } from '../utils/localStorage';
+import logoImage from '../assets/feed-the-world-alpha.png';
 
 import TextField from '@mui/material/TextField';
 import {
@@ -71,10 +72,15 @@ const SavedBanks = () => {
             </Grid>
           </Container>
         ) : (
-          <div>NOT LOGGED IN</div>
-        )}
-      </>
-    </div>
-  );
-}; //end
+          <div className="not-logged-in"> 
+              <img 
+                  src={logoImage} 
+                  alt="Feed the World Logo" 
+              />
+          </div>
+      )}
+  </>
+</div>
+);
+}; 
 export default SavedBanks;
