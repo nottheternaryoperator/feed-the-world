@@ -9,6 +9,7 @@ const links = [
     href: `mailto:nottheternaryoperator@gmail.com`,
     icon: 'ci:mail',
   },
+  
   {
     name: 'Github',
     href: 'https://github.com/nottheternaryoperator',
@@ -26,12 +27,12 @@ const Footer = () => {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        rowSpacing={2}
+        rowSpacing={1}
       >
         {links.map((link, i) => (
           <div key={i}>
             <Link component="a" href={link.href}>
-              <IconButton color="black" size="medium">
+              <IconButton color="black" size="medium" className='footer-link'>
                 <Icon icon={link.icon} />
               </IconButton>
             </Link>
@@ -55,7 +56,7 @@ const Footer = () => {
           >
             ❤️
           </span>{' '}
-          by the Not The Ternary Operator &#169; 2024
+          &nbsp; by the Not The Ternary Operator &#169; 2024
         </h4>
       </div>
     </footer>
