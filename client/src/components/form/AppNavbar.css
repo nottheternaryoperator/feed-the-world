@@ -1,11 +1,14 @@
 /* AppNavbar.css */
 
 .navbar nav-link:hover {
-    background-color: #ff5733;
-    color: aqua;
+    background-color: #F9CBCC;
+    color: #3E625F;
   }
   
 .loginBar {
-  background-color: rgb(255, 235, 235);
+  background-color: #F9CBCC;
 }
 
+.signUp {
+  color: rgb(30, 30, 30)
+}
