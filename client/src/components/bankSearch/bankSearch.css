@@ -7,15 +7,15 @@
   }
   .search-bar button {
     margin-left: 10 px;
-    color: blue;
+    color: #3E625F;
     font-weight: 600;
     transition: background-color 0.3s ease;
     border: grey;
   }
 
   .search-bar button:hover {
-    background-color: #ff5733;
-    color: aqua;
+    background-color: #F3C9BA;
+    color: #3E625F;
   }
   .search-bar input {
     height: 6px;

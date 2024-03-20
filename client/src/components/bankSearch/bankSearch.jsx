@@ -104,8 +104,8 @@ const BankSearch = () => {
                   {savedBankNames?.some(
                     (savedBankNames) => savedBankNames === bank.name
                   )
-                    ? 'saved to favourites!'
-                    : 'Save me to favourites!'}
+                    ? 'Added to favourites'
+                    : 'Add to favourites'}
                 </Button>
               </CardActions>
             </Card>
