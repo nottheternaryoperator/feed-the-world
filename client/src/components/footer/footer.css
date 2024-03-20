@@ -17,4 +17,10 @@
 
 .footer-info h4 {
   font-size: 14px; /* Adjust font size for footer info */
+  color: rgb(30, 30, 30);
+}
+
+/* Add some space between footer links */
+.footer-link {
+  margin-right: 20px !important; /* Adjust the margin value as needed */
 }
