@@ -1,8 +1,20 @@
-
 .footer {
+  flex-shrink: 0; /* Prevent the footer from shrinking */
   width: 100%; /* Occupy the entire width of the viewport */
-  background-color: #333; /* Optional: Set footer background color */
-  color: #fff; /* Optional: Set footer text color */
+  background-color: #F3C9BA; /* Optional: Set footer background color */
+  color: rgb(30, 30, 30); /* Optional: Set footer text color */
   padding: 10px; /* Adjust padding as needed */
   margin-top: auto; /* Push the footer to the bottom */
+}
+
+.footer p {
+  font-size: 12px; /* Adjust font size for footer links */
+}
+
+.footer-info {
+  text-align: center; /* Center align footer info */
+}
+
+.footer-info h4 {
+  font-size: 14px; /* Adjust font size for footer info */
 }

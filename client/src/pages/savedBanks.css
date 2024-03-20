@@ -1,68 +1,79 @@
-  .saved-banks-container {
-    margin-top: 58px; /* Adjust margin as needed */
+/* Add this CSS to your existing stylesheet */
+
+.fave-results {
+  margin-bottom: 20px; /* Adjust margin as needed */
+  height: px;
+  font-size: 10px; /* Optional: Adjust font size */
+  /* display: flex; Use flexbox for layout */
+  justify-content: space-between;
+}
+
+/* Adjust button styling */
+.fave-results button {
+  font-size: 10px; /* Optional: Adjust font size */
+
+    margin-left: 10 px;
+    color: blue;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: grey;
   }
 
-  .fave-results {
-    margin-bottom: 20px; /* Adjust margin as needed */
-    height: px;
-    
-    font-size: 10px; /* Optional: Adjust font size */
+  .fave-results button:hover {
+    background-color: #ff5733;
+    color: aqua;
   }
 
-  .MuiCardContent {
-    margin-bottom: 20px; /* Adjust margin as needed */
-    border: 1px solid #ddd; /* Optional: Add border to cards */
-    border-radius: 8px; /* Optional: Add border radius to cards */
-    height: 145px;
-    width: calc(100vw - 40px); /* Adjust width to fit the viewport width minus padding */
-    max-width: 400px; /* Set maximum width for the card */
-    font-size: 10px; /* Optional: Adjust font size */
-  }
+.MuiCardContent {
+  margin-bottom: 20px; /* Adjust margin as needed */
+  border: 1px solid #ddd; /* Optional: Add border to cards */
+  border-radius: 8px; /* Optional: Add border radius to cards */
+  height: 145px;
+  width: calc(100vw - 40px); /* Adjust width to fit the viewport width minus padding */
+  max-width: 400px; /* Set maximum width for the card */
+  font-size: 10px; /* Optional: Adjust font size */
+}
 
-  .MuiContainer-root {
-    max-width: 100% !important; /* Override max-width to make it full width */
-    width: 100% !important; /* Ensure container fills the entire width */
-  }
+.MuiContainer-root {
+  max-width: 100% !important; /* Override max-width to make it full width */
+  width: 100% !important; /* Ensure container fills the entire width */
+}
 
-  .saved-banks-container {
-    display: flex;
-    flex-wrap: wrap;
-    
-  }
+.saved-banks-container {
+  display: flex;
+  flex-wrap: wrap;
   
-  .saved-banks-container {
-    flex: 1 0 calc(50% - 20px); /* Ensure two cards per row with a gap */
-    border-radius: 8px;
-    height: 145px; /* Match the height of the BankSearch cards */
-    font-size: 10px;
-  }
-  
-  .app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Set minimum height to 100% of the viewport height */
-  }
-  
-  .content-container {
-    flex-grow: 1; /* Allow the content to grow to fill the remaining space */
-    display: flex;
-    justify-content: space-between; /* Position the containers on either side */
-    padding: 20px; /* Adjust padding as needed */
-  }
-  
-  .bank-search-panel {
-    width: calc(50% - 10px); /* Set the width of the panel to half minus some gap */
-    flex-shrink: 0; /* Prevent the panel from shrinking */
-    margin-bottom: 20px;
-    background-color: #fff; /* Optional: Set background color */
-    /* border-right: 1px solid #862e2e; */
-  }
-  
-  .saved-banks-panel {
-    width: calc(50% - 10px); /* Set the width of the panel to half minus some gap */
-    flex-shrink: 0; /* Prevent the panel from shrinking */
-    margin-bottom: 20px;
-    background-color: #fff; /* Optional: Set background color */
-    /* border-left: 1px solid #862e2e; */
-  }
-  
+}
+
+ .saved-banks-container {
+  flex: 1 0 calc(50% - 20px);
+  border-radius: 8px;
+  font-size: 10px; 
+} 
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  flex-grow: 1; 
+  display: flex;
+  justify-content: space-between; /* Position the containers on either side */
+  padding: 20px; /* Adjust padding as needed */
+}
+
+.bank-search-panel {
+  width: calc(50% - 10px); /* Set the width of the panel to half minus some gap */
+  margin-bottom: 20px;
+  background-color: #fff; /* Optional: Set background color */
+  /* border-right: 1px solid #862e2e; */
+}
+
+.saved-banks-panel {
+  width: calc(50% - 10px); /* Set the width of the panel to half minus some gap */
+  margin-bottom: 20px;
+  background-color: #fff; /* Optional: Set background color */
+ /
+}
