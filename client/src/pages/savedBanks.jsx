@@ -37,7 +37,7 @@ const SavedBanks = () => {
         throw new Error('something went wrong!');
       }
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
   };
   if (loading) {
@@ -49,32 +49,25 @@ const SavedBanks = () => {
         {Auth.loggedIn() ? (
           <Container>
             <Grid>
-              {userData.savedBanks.map((bank) => {
-                return (
-                  <div className="fave-results">
-                    <Card key={bank.name}>
-                      <CardContent>
-                        <Typography>Name: {bank.name}</Typography>
-                        <br />
-                        <Typography>Address: {bank.address}</Typography>
-                        <br />
-                        <Typography>
-                          Urgent Requirements:{' '}
-                          <ul>
-                            <li>{bank.needs}</li>
-                          </ul>
-                        </Typography>
-                        <Button
-                          size="small"
-                          onClick={() => bankRemoveHandler(bank.name)}
-                        >
-                          Remove favourite
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  </div>
-                );
-              })}{' '}
+            {userData.savedBanks.map((bank) => {
+  return (
+    <div className="fave-results" key={bank.name}>
+      <Card>
+        <CardContent>
+          <Typography variant="h5">Name: {bank.name}</Typography>
+          <Typography variant="body1">Address: {bank.address}</Typography>
+          <Typography variant="body1">Urgent Requirements:</Typography>
+          <ul>
+            <li>{bank.needs}</li>
+          </ul>
+          <Button size="small" onClick={() => bankRemoveHandler(bank.name)}>
+            Remove favourite
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+  );
+  })}{' '}
             </Grid>
           </Container>
         ) : (
