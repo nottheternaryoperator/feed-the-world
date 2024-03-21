@@ -72,7 +72,6 @@
   width: calc(50% - 10px); /* Set the width of the panel to half minus some gap */
   margin-bottom: 20px;
   background-color: #fff; /* Optional: Set background color */
- /
 }
 
 .not-logged-in img {
