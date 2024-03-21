@@ -1,0 +1,10 @@
+Form {
+    font-family:  "Indie Flower", cursive;
+}
+
+Form button {
+    background-color: #F9CBCC !important;
+    color: black !important;
+    font-weight: bold !important;
+    border-color: #F9CBCC !important;
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
-
+import './form.css'
 // import { createUser } from '../utils/API';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
@@ -108,6 +108,7 @@ const SignupForm = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Button
+          className='subbut'
           disabled={
             !(
               userFormData.username &&
@@ -116,7 +117,7 @@ const SignupForm = () => {
             )
           }
           type="submit"
-          variant="success"
+          // variant="success"
         >
           Submit
         </Button>

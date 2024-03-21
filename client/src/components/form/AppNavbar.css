@@ -46,3 +46,18 @@
     height: 50px;
   }
 }
+.logbut  {
+  background-color: #F9CBCC !important;
+  color: black !important;
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  margin: 5px !important;
+}
+
+/* .logbut-active {
+  background-color: white !important;
+} */
+
+.logbut:hover {
+  background-color: white !important;
+}
