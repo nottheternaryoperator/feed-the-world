@@ -56,7 +56,7 @@ const Footer = () => {
           >
             ❤️
           </span>{' '}
-          &nbsp; by the Not The Ternary Operator &#169; 2024
+          &nbsp;by the Not The Ternary Operator &#169; 2024
         </h4>
       </div>
     </footer>

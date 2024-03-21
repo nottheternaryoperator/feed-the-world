@@ -1,0 +1,39 @@
+
+  .search-bar {
+    margin-bottom: 20px; /* Adjust margin as needed */
+    display: flex;
+    align-items: center;
+  }
+  .search-bar button {
+    margin-left: 10 px;
+    color: blue;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: grey;
+  }
+
+  .search-bar button:hover {
+    background-color: #ff5733;
+    color: aqua;
+  }
+  .search-bar input {
+    height: 6px;
+  }
+  .search-results {
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+  
+  .card {
+    margin-bottom: 20px; /* Adjust margin as needed */
+    border: 1px solid #ddd; /* Optional: Add border to cards */
+    border-radius: 8px; /* Optional: Add border radius to cards */
+    height: 145px;
+    width: calc(100vw - 40px); /* Adjust width to fit the viewport width minus padding */
+    max-width: 400px; /* Set maximum width for the card */
+    font-size: 10px; /* Optional: Adjust font size */
+  }
+  .MuiContainer-root {
+    max-width: 100% !important; /* Override max-width to make it full width */
+    width: 100% !important; /* Ensure container fills the entire width */
+  }
+
