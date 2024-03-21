@@ -37,6 +37,7 @@ const SavedBanks = () => {
       if (error) {
         throw new Error('something went wrong!');
       }
+      location.reload();
     } catch (error) {
       console.error(error)
     }
