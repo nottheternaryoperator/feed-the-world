@@ -141,3 +141,6 @@ Third-Party API access provided by:
 https://www.givefood.org.uk/about-us/
 
 Email Contact: mail@givefood.org.uk
+
+## Deployed Link
+[Deployed project](https://feed-the-world-app-8b7198cc88e3.herokuapp.com/)
