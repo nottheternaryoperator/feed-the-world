@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './AppNavbar.css';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
-import './AppNavbar.css';
+
 import Logo from '../../assets/feed-the-world-alpha.png';
 
 import Auth from '../../utils/auth';
@@ -45,14 +46,14 @@ const AppNavbar = () => {
       >
         {/* tab container to do either signup or login component */}
         <Tab.Container defaultActiveKey="login">
-          <Modal.Header closeButton>
+          <Modal.Header className='closed' closeButton>
             <Modal.Title id="signup-modal">
               <Nav variant="pills">
-                <Nav.Item>
+                <Nav.Item >
                   <Nav.Link eventKey="login">Login</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="signup">Sign Up</Nav.Link>
+                <Nav.Item >
+                  <Nav.Link eventKey="signup" >Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>

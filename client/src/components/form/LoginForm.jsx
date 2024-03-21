@@ -4,6 +4,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import Auth from '../../utils/auth';
 import { USER_LOGIN } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
+import './form.css'
 
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
@@ -45,7 +46,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit} >
         <Alert
           dismissible
           onClose={() => setShowAlert(false)}
@@ -84,6 +85,7 @@ const LoginForm = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Button
+          className='submit-form'
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"

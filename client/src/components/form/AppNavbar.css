@@ -46,3 +46,25 @@
     height: 50px;
   }
 }
+
+.closed {
+  background-color: #F9CBCC;
+  
+}
+
+.Nav.Link-active {
+  background-color: #F9CBCC;
+
+}
+
+.modal-login{
+  background-color: white;
+  border-radius: 10px;
+  
+}
+
+
+
+
+
+
