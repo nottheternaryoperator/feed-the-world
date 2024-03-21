@@ -90,24 +90,27 @@ const BankSearch = () => {
             <Card key={bank.name} className="card">
               <CardContent>
                 <Typography>Name: {bank.name}</Typography>
-
                 <Typography>Address: {bank.address}</Typography>
               </CardContent>
               <CardActions>
-                <Button 
-                  className='addButton'
-                  disabled={savedBankNames?.some(
-                    (savedBankNames) => savedBankNames === bank.name
-                  )}
-                  size="small"
-                  onClick={() => saveBankHandler(bank.name)}
-                >
-                  {savedBankNames?.some(
-                    (savedBankNames) => savedBankNames === bank.name
-                  )
-                    ? 'Added to favourites'
-                    : 'Add to favourites'}
-                </Button>
+                {Auth.loggedIn() ? (
+                  <Button
+                    className="addButton"
+                    disabled={savedBankNames?.some(
+                      (savedBankNames) => savedBankNames === bank.name
+                    )}
+                    size="small"
+                    onClick={() => saveBankHandler(bank.name)}
+                  >
+                    {savedBankNames?.some(
+                      (savedBankNames) => savedBankNames === bank.name
+                    )
+                      ? 'Added to favourites'
+                      : 'Add to favourites'}
+                  </Button>
+                ) : (
+                  <></>
+                )}
               </CardActions>
             </Card>
           ))}
